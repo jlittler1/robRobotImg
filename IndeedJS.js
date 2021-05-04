@@ -1,5 +1,5 @@
 function uipath_loadScrapeRPAMarketWatchlist() {
-    let process_name = "IndeedExample";
+    let process_name = "RPAMarketWatchlist_Scrape";
     let arguments = {};
     const robot = UiPathRobot.init();
     robot.getProcesses().then(function (results) {
@@ -15,15 +15,4 @@ function uipath_loadScrapeRPAMarketWatchlist() {
             showError("Process not found!")
         }
 
-	process.start(arguments).then((result) => {
-	    console.log("Status:", result.out_Status);
-	    alert(result.out_Status);
-	}, err => {
-            console.log(err)
-            showError(err)
-        });
-    }, function (err) {
-        console.log("Something else went wrong", err)
-        showError("Something else went wrong " + err)
-    });
 }
